@@ -1,0 +1,127 @@
+{
+  "_auto-CuZZP6Ge.js": {
+    "file": "assets/auto-CuZZP6Ge.js",
+    "name": "auto",
+    "imports": [
+      "_chunk-Dw8S_Fh8.js"
+    ]
+  },
+  "_chunk-Dw8S_Fh8.js": {
+    "file": "assets/chunk-Dw8S_Fh8.js",
+    "name": "chunk"
+  },
+  "_preload-helper-CTTryutC.js": {
+    "file": "assets/preload-helper-CTTryutC.js",
+    "name": "preload-helper"
+  },
+  "_typeof-Dtizcwqq.js": {
+    "file": "assets/typeof-Dtizcwqq.js",
+    "name": "typeof"
+  },
+  "node_modules/canvg/lib/index.es.js": {
+    "file": "assets/index.es-PlgrlDqc.js",
+    "name": "index.es",
+    "src": "node_modules/canvg/lib/index.es.js",
+    "isDynamicEntry": true,
+    "imports": [
+      "_chunk-Dw8S_Fh8.js",
+      "_typeof-Dtizcwqq.js"
+    ]
+  },
+  "node_modules/dompurify/dist/purify.es.mjs": {
+    "file": "assets/purify.es-D9qeai_K.js",
+    "name": "purify.es",
+    "src": "node_modules/dompurify/dist/purify.es.mjs",
+    "isDynamicEntry": true
+  },
+  "node_modules/html2canvas/dist/html2canvas.js": {
+    "file": "assets/html2canvas-BqnFSpuo.js",
+    "name": "html2canvas",
+    "src": "node_modules/html2canvas/dist/html2canvas.js",
+    "isDynamicEntry": true,
+    "imports": [
+      "_chunk-Dw8S_Fh8.js"
+    ]
+  },
+  "node_modules/jspdf/dist/jspdf.es.min.js": {
+    "file": "assets/jspdf.es.min-CsrjJQC3.js",
+    "name": "jspdf.es.min",
+    "src": "node_modules/jspdf/dist/jspdf.es.min.js",
+    "isDynamicEntry": true,
+    "imports": [
+      "_chunk-Dw8S_Fh8.js",
+      "_preload-helper-CTTryutC.js",
+      "_typeof-Dtizcwqq.js"
+    ],
+    "dynamicImports": [
+      "node_modules/html2canvas/dist/html2canvas.js",
+      "node_modules/dompurify/dist/purify.es.mjs",
+      "node_modules/canvg/lib/index.es.js"
+    ]
+  },
+  "resources/css/app.css": {
+    "file": "assets/app-DatEVuYT.css",
+    "name": "app",
+    "names": [
+      "app.css"
+    ],
+    "src": "resources/css/app.css",
+    "isEntry": true
+  },
+  "resources/js/app.js": {
+    "file": "assets/app-BYaUl-61.js",
+    "name": "app",
+    "src": "resources/js/app.js",
+    "isEntry": true,
+    "imports": [
+      "_chunk-Dw8S_Fh8.js"
+    ]
+  },
+  "resources/js/dashboard.js": {
+    "file": "assets/dashboard-CEFzNyS3.js",
+    "name": "dashboard",
+    "src": "resources/js/dashboard.js",
+    "isEntry": true,
+    "imports": [
+      "_auto-CuZZP6Ge.js"
+    ],
+    "css": [
+      "assets/dashboard-CJWTAX1D.css"
+    ]
+  },
+  "resources/js/history-detail.js": {
+    "file": "assets/history-detail-fCDC-k9X.js",
+    "name": "history-detail",
+    "src": "resources/js/history-detail.js",
+    "isEntry": true,
+    "imports": [
+      "_chunk-Dw8S_Fh8.js",
+      "_preload-helper-CTTryutC.js"
+    ],
+    "dynamicImports": [
+      "node_modules/html2canvas/dist/html2canvas.js",
+      "node_modules/jspdf/dist/jspdf.es.min.js"
+    ]
+  },
+  "resources/js/lab.js": {
+    "file": "assets/lab-Bgll5iRp.js",
+    "name": "lab",
+    "src": "resources/js/lab.js",
+    "isEntry": true,
+    "imports": [
+      "_chunk-Dw8S_Fh8.js",
+      "_preload-helper-CTTryutC.js"
+    ],
+    "dynamicImports": [
+      "node_modules/html2canvas/dist/html2canvas.js",
+      "node_modules/jspdf/dist/jspdf.es.min.js",
+      "_auto-CuZZP6Ge.js"
+    ]
+  },
+  "resources/js/problem-solver.js": {
+    "file": "assets/problem-solver-C9B8MzUV.js",
+    "name": "problem-solver",
+    "src": "resources/js/problem-solver.js",
+    "isEntry": true
+  }
+}

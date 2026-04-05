@@ -1,0 +1,251 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/**
+ * Тёмный левый сайдбар (референс): цвета заданы явно — не зависят от purge arbitrary Tailwind.
+ */
+@layer components {
+    .app-sidebar-shell {
+        background-color: #120d1d;
+        background-image:
+            linear-gradient(180deg, rgba(45, 39, 58, 0.35) 0%, transparent 42%),
+            linear-gradient(160deg, rgba(168, 85, 247, 0.06) 0%, transparent 55%),
+            linear-gradient(180deg, #120d1d 0%, #0c0814 100%);
+        color: #ffffff;
+        border-right: 1px solid rgba(255, 255, 255, 0.06);
+        box-shadow: 4px 0 24px rgba(0, 0, 0, 0.35);
+    }
+
+    .app-sidebar-link {
+        color: rgba(255, 255, 255, 0.88);
+        text-decoration: none;
+    }
+
+    .app-sidebar-link:hover {
+        background-color: rgba(255, 255, 255, 0.07);
+        color: #ffffff;
+    }
+
+    .app-sidebar-link--active {
+        background-color: #2d273a !important;
+        color: #ffffff !important;
+        box-shadow:
+            inset 0 0 0 1px rgba(255, 255, 255, 0.06),
+            0 1px 0 rgba(0, 0, 0, 0.2);
+    }
+
+    .app-sidebar-link--active:hover {
+        background-color: #352e44 !important;
+        color: #ffffff !important;
+    }
+
+    .app-sidebar-icon-wrap {
+        background-color: rgba(255, 255, 255, 0.06);
+    }
+
+    .app-sidebar-link--active .app-sidebar-icon-wrap {
+        background-color: rgba(255, 255, 255, 0.12);
+    }
+
+    .app-sidebar-icon {
+        color: #ffffff;
+        flex-shrink: 0;
+    }
+
+    .app-sidebar-profile-email {
+        color: rgba(255, 255, 255, 0.5) !important;
+    }
+
+    /** Десктоп: свёрнутый сайдбар (rail — одна колонка, без обрезки) */
+    @media (min-width: 1024px) {
+        .app-sidebar--collapsed .app-sidebar-inner {
+            padding-left: 0.5rem;
+            padding-right: 0.5rem;
+        }
+
+        .app-sidebar--collapsed .sidebar-brand-inner {
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .app-sidebar--collapsed .sidebar-brand-link {
+            flex: 0 0 auto;
+            width: auto;
+            justify-content: center;
+            padding-left: 0;
+            padding-right: 0;
+        }
+
+        .app-sidebar--collapsed .sidebar-brand-inner .sidebar-brand-text {
+            display: none;
+        }
+
+        .app-sidebar--collapsed .sidebar-brand-logo {
+            width: 2.25rem;
+            height: 2.25rem;
+        }
+
+        .app-sidebar--collapsed .sidebar-rail-toggle {
+            width: 2.25rem;
+            height: 2.25rem;
+        }
+
+        .app-sidebar--collapsed .app-sidebar-link {
+            justify-content: center;
+            gap: 0;
+            padding: 0.5rem 0.25rem;
+        }
+
+        .app-sidebar--collapsed .app-sidebar-icon-wrap {
+            width: 2.25rem;
+            height: 2.25rem;
+        }
+
+        .app-sidebar--collapsed .app-sidebar-icon {
+            width: 1.125rem;
+            height: 1.125rem;
+        }
+
+        .app-sidebar--collapsed .sidebar-nav-label {
+            display: none;
+        }
+
+        .app-sidebar--collapsed .sidebar-profile-meta,
+        .app-sidebar--collapsed .sidebar-profile-chevron {
+            display: none;
+        }
+
+        .app-sidebar--collapsed .sidebar-profile-trigger {
+            justify-content: center;
+            gap: 0;
+            padding: 0.5rem 0.25rem;
+        }
+
+        .app-sidebar--collapsed .sidebar-profile-avatar {
+            width: 2rem;
+            height: 2rem;
+            padding: 1px;
+            /* Тише, чем полноширинный сайдбар: перебиваем ring/shadow из разметки */
+            box-shadow:
+                0 0 0 1px rgba(232, 121, 249, 0.28),
+                0 2px 10px rgba(0, 0, 0, 0.35) !important;
+        }
+
+        .app-sidebar--collapsed .sidebar-profile-avatar > div {
+            box-shadow: inset 0 0 8px rgba(168, 85, 247, 0.07) !important;
+        }
+
+        .app-sidebar--collapsed .sidebar-profile-avatar span {
+            font-size: 0.875rem;
+        }
+    }
+}
+
+@layer utilities {
+    /**
+     * Фон как на референсе: база #050505 → #100818,
+     * акценты ровно #A855F7 (purple-500) и #D946EF (fuchsia).
+     */
+    .landing-mesh {
+        background-color: #050505;
+        background-image:
+            radial-gradient(ellipse 110% 75% at 50% -35%, rgba(168, 85, 247, 0.32), transparent 58%),
+            radial-gradient(ellipse 55% 50% at 0% 0%, rgba(217, 70, 239, 0.22), transparent 65%),
+            radial-gradient(ellipse 60% 55% at 100% 15%, rgba(168, 85, 247, 0.14), transparent 60%),
+            radial-gradient(ellipse 80% 60% at 80% 100%, rgba(217, 70, 239, 0.1), transparent 55%),
+            linear-gradient(180deg, #050505 0%, #080510 32%, #0d0818 68%, #100818 100%);
+        background-attachment: fixed;
+    }
+
+    /* Диагональные «лучи» сверху слева */
+    .landing-ray {
+        background-image:
+            linear-gradient(
+                118deg,
+                rgba(168, 85, 247, 0.12) 0%,
+                rgba(217, 70, 239, 0.06) 22%,
+                transparent 42%
+            ),
+            linear-gradient(
+                132deg,
+                transparent 48%,
+                rgba(168, 85, 247, 0.05) 68%,
+                transparent 88%
+            );
+    }
+
+    .glass-card {
+        @apply rounded-2xl border border-white/[0.08] bg-white/[0.03] backdrop-blur-md shadow-[0_0_0_1px_rgba(255,255,255,0.04)_inset];
+    }
+
+    .text-gradient-brand {
+        @apply bg-gradient-to-r from-fuchsia-400 via-purple-400 to-violet-400 bg-clip-text text-transparent;
+    }
+
+    .guest-auth-form label {
+        @apply text-zinc-300;
+    }
+
+    .guest-auth-form input[type='email'],
+    .guest-auth-form input[type='password'],
+    .guest-auth-form input[type='text'] {
+        @apply bg-zinc-950/60 border-white/15 text-white placeholder:text-zinc-600 focus:border-fuchsia-500/50 focus:ring-fuchsia-500/30;
+    }
+
+    .guest-auth-form .text-gray-600,
+    .guest-auth-form .text-gray-700 {
+        @apply text-zinc-400;
+    }
+
+    .guest-auth-form a.text-gray-600 {
+        @apply text-fuchsia-300/90 hover:text-white;
+    }
+
+    .guest-auth-form button[type='submit'] {
+        @apply rounded-full border-0 bg-gradient-to-r from-purple-600 to-fuchsia-600 px-6 py-2.5 text-sm font-semibold normal-case tracking-normal text-white shadow-[0_0_24px_rgba(168,85,247,0.35)] hover:brightness-110 focus:ring-fuchsia-500/50;
+    }
+
+    .guest-auth-form p.border-gray-200 {
+        @apply border-white/10 bg-zinc-950/40 text-zinc-400;
+    }
+
+    input.login-split-input {
+        @apply rounded-xl border-gray-300 shadow-sm focus:border-fuchsia-500 focus:ring-fuchsia-500;
+    }
+
+    /**
+     * Authenticated app (admin): light lavender base, purple/fuchsia accents only —
+     * high contrast, no stacked near-black blocks.
+     */
+    .admin-app-shell {
+        background-color: #f3f1f9;
+        background-image:
+            radial-gradient(ellipse 95% 60% at 0% -8%, rgba(168, 85, 247, 0.1), transparent 55%),
+            radial-gradient(ellipse 75% 50% at 100% 0%, rgba(217, 70, 239, 0.07), transparent 50%),
+            linear-gradient(180deg, #f5f3fa 0%, #eeebf6 100%);
+    }
+
+    .admin-header-bar {
+        @apply border-b border-violet-200/70 bg-white/90 backdrop-blur-md shadow-[0_1px_0_rgba(139,92,246,0.08)];
+    }
+
+    .admin-surface {
+        @apply rounded-2xl border border-violet-100/90 bg-white shadow-sm shadow-violet-500/[0.08];
+    }
+
+    .admin-table-head {
+        @apply bg-violet-50/95 text-left text-xs font-semibold uppercase tracking-wider text-violet-800/75;
+    }
+
+    .admin-link {
+        @apply font-medium text-violet-700 hover:text-fuchsia-600 underline-offset-2 hover:underline;
+    }
+
+    .admin-btn-primary-solid {
+        @apply inline-flex items-center justify-center rounded-xl bg-gradient-to-r from-violet-600 to-fuchsia-600 px-4 py-2.5 text-sm font-semibold text-white shadow-md shadow-violet-500/25 transition hover:brightness-105 focus:outline-none focus:ring-2 focus:ring-fuchsia-400/50 focus:ring-offset-2 focus:ring-offset-[#f3f1f9];
+    }
+}
